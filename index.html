@@ -1,13 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anne with an E - Fan Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #f8f3ed;
+      color: #3b2f2f;
+    }
+    header {
+      background: linear-gradient(to right, #dcb0ff, #b3ffab);
+      padding: 2rem;
+      text-align: center;
+      color: #4b2c5e;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    nav {
+      background-color: #fff0f5;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #8b008b;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      border-bottom: 2px solid #dcb0ff;
+      margin-bottom: 1rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #f3e6f3;
+      color: #5a3a5a;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Titulo</h1>
-    <h1>Lorem</h1>
-    <h1>Ipsum</h1>
+  <header>
+    <h1>Anne with an E</h1>
+    <p>Una serie que toca el alma con ternura, valentía y poesía.</p>
+  </header>
+
+  <nav>
+    <a href="#sinopsis">Sinopsis</a>
+    <a href="#personajes">Personajes</a>
+    <a href="#galeria">Galería</a>
+    <a href="#curiosidades">Curiosidades</a>
+  </nav>
+
+  <section id="sinopsis">
+    <h2 class="section-title">Sinopsis</h2>
+    <p>
+      "Anne with an E" cuenta la historia de Anne Shirley, una huérfana soñadora y valiente
+      que llega por error a la granja Green Gables. Ambientada en el siglo XIX en la Isla del Príncipe Eduardo,
+      la serie sigue su lucha por encontrar su lugar en el mundo, enfrentando prejuicios con inteligencia, corazón y mucha imaginación.
+    </p>
+  </section>
+
+  <section id="personajes">
+    <h2 class="section-title">Personajes principales</h2>
+    <ul>
+      <li><strong>Anne Shirley-Cuthbert:</strong> La protagonista soñadora y apasionada por la lectura.</li>
+      <li><strong>Matthew Cuthbert:</strong> El tímido pero amoroso hermano mayor que la adopta.</li>
+      <li><strong>Marilla Cuthbert:</strong> La mujer estricta pero justa que termina encariñándose con Anne.</li>
+      <li><strong>Gilbert Blythe:</strong> Compañero y rival de Anne, inteligente y noble.</li>
+      <li><strong>Diana Barry:</strong> La mejor amiga de Anne, fiel y dulce.</li>
+    </ul>
+  </section>
+
+  <section id="galeria">
+    <h2 class="section-title">Galería</h2>
+    <div class="gallery">
+      <img src="https://i.imgur.com/3bbQ3C7.jpg" alt="Anne y Diana">
+      <img src="https://i.imgur.com/o6VskT2.jpg" alt="Anne pensativa en el campo">
+      <img src="https://i.imgur.com/CNyLgAx.jpg" alt="Green Gables">
+      <img src="https://i.imgur.com/D8YuT0g.jpg" alt="Anne leyendo">
+    </div>
+  </section>
+
+  <section id="curiosidades">
+    <h2 class="section-title">Curiosidades</h2>
+    <ul>
+      <li>Está basada en el libro "Anne of Green Gables" de Lucy Maud Montgomery.</li>
+      <li>Fue cancelada tras su tercera temporada, causando una campaña masiva de fans para salvarla.</li>
+      <li>Los paisajes reales de Canadá fueron usados como escenarios naturales.</li>
+      <li>La serie aborda temas actuales como feminismo, racismo, abuso, bullying y derechos LGBTQ+.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Fan page hecha con amor para todos los que llevan un poco de Anne en el corazón 💜</p>
+  </footer>
 </body>
 </html>
