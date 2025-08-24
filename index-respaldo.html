@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix Mood</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    
+    #intro-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #intro-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    
+    #main-content {
+      display: none;
+    }
+
+    header {
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .logo { 
+      height: 60px;
+    }
+
+    .menu-icons { 
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menu-icons img {
+      height: 40px;
+    }
+
+    .menu-btn {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px red;
+    }
+
+  .hero {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6)), url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px 120px 100px; 
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: red;
+  text-shadow: 2px 2px 4px black;
+}
+
+
+    .curved-section {
+      background: linear-gradient(to bottom, black, #111);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .curved-section h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .genre-options {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .genre {
+      width: 220px;
+    }
+
+    .genre p {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .genre img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border: 4px solid red;
+      border-radius: 20px;
+      box-shadow: 0 0 15px red;
+      transition: transform 0.3s;
+    }
+
+    .genre img:hover {
+      transform: scale(1.05);
+    }
+    
+    .curved-red-top,
+    .curved-red-bottom {
+      display: block;
+      width: 100%;
+      height: 60px;
+      background-color: transparent;
+    }
+
+    .curved-red-top svg,
+    .curved-red-bottom svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+.surprise-section {
+  background: url("FONDOSORPRESA-Photoroom.png") center center no-repeat fixed;
+  background-size: contain; 
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+    .surprise-title {
+      font-size: 40px;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .surprise-button {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      font-size: 28px;
+      border: none;
+      padding: 18px 60px;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .fondo-cards-mini {
+      width: 100%;
+      margin-top: 80px;
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="intro-container">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="VideoNetflix.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <div id="main-content">
+
+    <header>
+      <img src="logonetflix.png" class="logo">
+      <div class="menu-icons">
+        <img src="MenuIndiceLogo.png" alt="Menú">
+        <img src="PerfilLogoCuenta.jpeg" alt="Perfil">
+        
+        <a href="agregar.html"><button class="menu-btn">Ingresar Películas o series</button></a>
+        <a href="sobrenosotros.html"><button class="menu-btn">Sobre Nosotros</button></a>
+        <a href="registro.html"><button class="menu-btn">Registrarse</button></a>
+      </div>
+    </header>
+
+    <div class="curved-red-top">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,50 L1440,50" fill="transparent" stroke="red" stroke-width="16"/>
+      </svg>
+    </div>
+
+    <div class="hero">
+      Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.
+    </div>
+
+    <div class="curved-red-top">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,100 Q720,-80 1440,100" fill="transparent" stroke="red" stroke-width="16"/>
+      </svg>
+    </div>
+
+  
+    <section class="curved-section">
+      <h2>¿Qué preferís ver un domingo a la noche?</h2>
+      <div class="genre-options">
+        <div class="genre"><p>Romance</p><img src="PortadaGeneroRomance.jpeg" alt="Romance"></div>
+        <div class="genre"><p>Terror</p><img src="PortadaGeneroTerror.webp" alt="Terror"></div>
+        <div class="genre"><p>Comedia</p><img src="PortadaGeneroComedia.jpeg" alt="Comedia"></div>
+        <div class="genre"><p>Studio Ghibli</p><img src="PortadaGeneroStudioGhibli.jpg" alt="Studio Ghibli"></div>
+        <div class="genre"><p>Superheroes</p><img src="PortadaGeneroSuperheroes.jpg" alt="Superheroes"></div>
+        <div class="genre"><p>Animación</p><img src="PortadaGeneroAnimacion.jpg" alt="Animación"></div>
+        <div class="genre"><p>Documental</p><img src="PortadaGeneroDocumental.jpeg" alt="Documental"></div>
+        <div class="genre"><p>Acción</p><img src="PortadaGeneroAccion.jpg" alt="Acción"></div>
+        <div class="genre"><p>Fantasía</p><img src="PortadaGeneroFantasia.jpeg" alt="Fantasía"></div>
+        <div class="genre"><p>Historia</p><img src="PortadaGeneroHistoria.jpg" alt="Historia"></div>
+        <div class="genre"><p>Policial</p><img src="PortadaGeneroPolicial.webp" alt="Policial"></div>
+        <div class="genre"><p>Vaqueros</p><img src="PortadaGeneroVaqueros.jpg" alt="Vaqueros"></div>
+      </div>
+    </section>
+
+<div class="curved-red-bottom">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,0 Q720,180 1440,0" fill="transparent" stroke="red" stroke-width="16"/>
+      </svg>
+    </div>
+
+
+    <section class="surprise-section">
+      <h2 class="surprise-title">No sé qué ver... ¡Sorprendeme!</h2>
+      <button class="surprise-button">Click aquí</button>
+    </section>
+    <div class="curved-red-top">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,50 L1440,50" fill="transparent" stroke="red" stroke-width="16"/>
+      </svg>
+    </div>
+
+  
+
+    
+    <section class="fondo-cards-mini">
+      <img src="fondo.jpg" alt="Fondos de pelis y series" style="width:100%; height:120px; object-fit:cover; display:block; border-radius:20px; margin:0 auto;">
+    </section>
+
+  </div>
+
+  <script>
+    const video = document.getElementById('intro-video');
+    const introContainer = document.getElementById('intro-container');
+    const mainContent = document.getElementById('main-content');
+
+    video.onended = function() {
+      introContainer.style.display = 'none';
+      mainContent.style.display = 'block';
+    };
+  </script>
+
+</body>
+</html>
+

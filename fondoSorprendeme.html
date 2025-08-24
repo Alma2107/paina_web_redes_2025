@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix Mood</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    header {
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .logo { 
+      height: 60px;
+    }
+
+    .menu-icons { 
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menu-icons img {
+      height: 40px;
+    }
+
+    .register-btn {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .hero {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6)), url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: red;
+  text-shadow: 2px 2px 4px black;
+}
+
+   .curved-section {
+  background: linear-gradient(to bottom, black, #111);
+
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.curved-section h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+    .genre-options {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .genre {
+      width: 300px;
+    }
+
+    .genre p {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .genre img {
+    width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border: 4px solid red;
+  border-radius: 20px;
+  box-shadow: 0 0 15px red;
+}
+    
+    .curved-red-top,
+    .curved-red-bottom {
+      display: block;
+      width: 100%;
+      height: 60px;
+      background-color: transparent;
+    }
+
+    .curved-red-top svg,
+    .curved-red-bottom svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+ 
+
+.characters-top {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  pointer-events: none;
+}
+
+.characters-bottom {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  pointer-events: none;
+}
+
+.characters-top img,
+.characters-bottom img {
+  height: 160px;         /* Más grande */
+  border-radius: 15px;
+  object-fit: cover;
+  background: transparent;
+  transition: transform 0.3s;
+}
+
+
+
+  .characters-top img,
+.characters-bottom img {
+  height: 100px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+    .devices-img {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px red;
+    }
+    .curva-img {
+  transition: transform 0.3s;
+}
+
+    .form-section {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.8)), url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.85);
+      width: 350px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px red;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 25px;
+      background-color: red;
+      color: white;
+      font-size: 16px;
+    }
+
+    .surprise-section {
+  background: url('fondoSorprendeme.png') center center no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.surprise-title {
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.surprise-button {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  border: none;
+  padding: 18px 60px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #000;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logonetflix.png" class="logo">
+    <div class="menu-icons">
+      <img src="MenuIndiceLogo.png" alt="Menú">
+      <img src="PerfilLogoCuenta.jpeg" alt="Perfil">
+      <button class="register-btn">Registrarse</button>
+    </div>
+  </header>
+<div class="curved-red-top">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,50 L1440,50" fill="transparent" stroke="red" stroke-width="16"/>
+  </svg>
+</div>
+  <div class="hero">
+    Domingo, sillón y pelis. Vos elegís el mood, nosotros el resto.
+  </div>
+
+<div class="curved-red-top">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,100 Q720,-80 1440,100" fill="transparent" stroke="red" stroke-width="16"/>
+  </svg>
+</div>
+  <section class="curved-section">
+    <h2>¿Qué preferís ver un domingo a la noche?</h2>
+    <div class="genre-options">
+      <div class="genre">
+        <p>Romance</p>
+        <img src="PortadaGeneroRomance.jpeg" alt="Romance">
+      </div>
+      <div class="genre">
+        <p>Terror</p>
+        <img src="PortadaGeneroTerror.webp" alt="Terror">
+      </div>
+      <div class="genre">
+        <p>Comedia</p>
+        <img src="PortadaGeneroComedia.jpeg" alt="Comedia">
+      </div>
+    </div>
+  </section>
+  
+...
+<div class="curved-red-bottom">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 Q720,180 1440,0" fill="transparent" stroke="red" stroke-width="16"/>
+  </svg>
+</div>
+<section class="surprise-section">
+  <h2 class="surprise-title">¿No sabes qué ver...?</h2>
+  <button class="surprise-button">click aquí</button>
+</section>
+</body>
+</html>

@@ -2,120 +2,265 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anne with an E - Fan Page</title>
+  <title>Netflix</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #f8f3ed;
-      color: #3b2f2f;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header {
-      background: linear-gradient(to right, #dcb0ff, #b3ffab);
-      padding: 2rem;
-      text-align: center;
-      color: #4b2c5e;
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+      background: black;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
+
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 9999;
     }
-    nav {
-      background-color: #fff0f5;
-      padding: 1rem;
-      text-align: center;
+
+    #intro video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #8b008b;
+
+    #contenido, #formRegistro {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    #contenido {
+      display: none;
+      background: black;
+    }
+
+    .fondo {
+      background-image: url("netflix-catalogo.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-size: 40px;
+      color: #e50914;
       font-weight: bold;
     }
-    section {
-      padding: 2rem;
+
+    .boton-inicio {
+      background: #e50914;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
     }
-    .section-title {
-      font-size: 2rem;
-      border-bottom: 2px solid #dcb0ff;
-      margin-bottom: 1rem;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .gallery img {
-      width: 300px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    }
-    footer {
+
+    .centro {
       text-align: center;
-      padding: 2rem;
-      background-color: #f3e6f3;
-      color: #5a3a5a;
-      margin-top: 2rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 800px;
+      padding: 20px;
+      z-index: 2;
     }
+
+    .centro h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    /* FORMULARIO */
+    #formRegistro {
+      display: none;
+      background: #111;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      max-width: 400px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    #formRegistro h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #e50914;
+    }
+
+    #formRegistro label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: bold;
+    }
+
+    #formRegistro input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    #formRegistro input:focus {
+      outline: 2px solid #e50914;
+    }
+
+    #formRegistro button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background: #e50914;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+    }
+
+    #formRegistro button:hover {
+      background: #b00710;
+    }
+
+    /* Botón para volver */
+    #volverBtn {
+      margin-top: 15px;
+      display: block;
+      background: transparent;
+      border: none;
+      color: #e50914;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>Anne with an E</h1>
-    <p>Una serie que toca el alma con ternura, valentía y poesía.</p>
-  </header>
 
-  <nav>
-    <a href="#sinopsis">Sinopsis</a>
-    <a href="#personajes">Personajes</a>
-    <a href="#galeria">Galería</a>
-    <a href="#curiosidades">Curiosidades</a>
-  </nav>
+  <div id="intro">
+    <video id="videoIntro" autoplay muted>
+      <source src="Netflix Intro 4k (AI upscaled).mp4" type="video/mp4">
+    </video>
+  </div>
 
-  <section id="sinopsis">
-    <h2 class="section-title">Sinopsis</h2>
-    <p>
-      "Anne with an E" cuenta la historia de Anne Shirley, una huérfana soñadora y valiente
-      que llega por error a la granja Green Gables. Ambientada en el siglo XIX en la Isla del Príncipe Eduardo,
-      la serie sigue su lucha por encontrar su lugar en el mundo, enfrentando prejuicios con inteligencia, corazón y mucha imaginación.
-    </p>
-  </section>
+  <div id="contenido">
+    <div class="fondo">
+      <div class="overlay"></div>
 
-  <section id="personajes">
-    <h2 class="section-title">Personajes principales</h2>
-    <ul>
-      <li><strong>Anne Shirley-Cuthbert:</strong> La protagonista soñadora y apasionada por la lectura.</li>
-      <li><strong>Matthew Cuthbert:</strong> El tímido pero amoroso hermano mayor que la adopta.</li>
-      <li><strong>Marilla Cuthbert:</strong> La mujer estricta pero justa que termina encariñándose con Anne.</li>
-      <li><strong>Gilbert Blythe:</strong> Compañero y rival de Anne, inteligente y noble.</li>
-      <li><strong>Diana Barry:</strong> La mejor amiga de Anne, fiel y dulce.</li>
-    </ul>
-  </section>
+      <div class="navbar">
+        <div class="logo">NETFLIX</div>
+        <div>
+          <span class="boton-inicio" id="btnRegistrar">Registrarse</span>
+        </div>
+      </div>
 
-  <section id="galeria">
-    <h2 class="section-title">Galería</h2>
-    <div class="gallery">
-      <img src="https://i.imgur.com/3bbQ3C7.jpg" alt="Anne y Diana">
-      <img src="https://i.imgur.com/o6VskT2.jpg" alt="Anne pensativa en el campo">
-      <img src="https://i.imgur.com/CNyLgAx.jpg" alt="Green Gables">
-      <img src="https://i.imgur.com/D8YuT0g.jpg" alt="Anne leyendo">
+      <div class="centro">
+        <h1>Películas y series ilimitadas y mucho más</h1>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section id="curiosidades">
-    <h2 class="section-title">Curiosidades</h2>
-    <ul>
-      <li>Está basada en el libro "Anne of Green Gables" de Lucy Maud Montgomery.</li>
-      <li>Fue cancelada tras su tercera temporada, causando una campaña masiva de fans para salvarla.</li>
-      <li>Los paisajes reales de Canadá fueron usados como escenarios naturales.</li>
-      <li>La serie aborda temas actuales como feminismo, racismo, abuso, bullying y derechos LGBTQ+.</li>
-    </ul>
-  </section>
+  <div id="formRegistro">
+    <h2>Formulario de Registro</h2>
+    <form id="registroForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
 
-  <footer>
-    <p>Fan page hecha con amor para todos los que llevan un poco de Anne en el corazón 💜</p>
-  </footer>
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required />
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,15}" placeholder="Solo números" />
+
+      <button type="submit">Enviar</button>
+    </form>
+    <button id="volverBtn">Volver</button>
+  </div>
+
+  <script>
+    const video = document.getElementById("videoIntro");
+    const intro = document.getElementById("intro");
+    const contenido = document.getElementById("contenido");
+    const formRegistro = document.getElementById("formRegistro");
+    const btnRegistrar = document.getElementById("btnRegistrar");
+    const volverBtn = document.getElementById("volverBtn");
+    const registroForm = document.getElementById("registroForm");
+
+    video.addEventListener("ended", () => {
+      intro.style.display = "none";
+      contenido.style.display = "block";
+      document.body.style.overflow = "auto";
+    });
+
+    btnRegistrar.addEventListener("click", () => {
+      contenido.style.display = "none";
+      formRegistro.style.display = "block";
+      window.scrollTo(0,0);
+    });
+
+    volverBtn.addEventListener("click", () => {
+      formRegistro.style.display = "none";
+      contenido.style.display = "block";
+    });
+
+    registroForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = registroForm.email.value.trim();
+      const usuario = registroForm.usuario.value.trim();
+      const password = registroForm.password.value.trim();
+      const telefono = registroForm.telefono.value.trim();
+
+      alert(`Registro enviado:\nEmail: ${email}\nUsuario: ${usuario}\nTeléfono: ${telefono}`);
+
+      registroForm.reset();
+      formRegistro.style.display = "none";
+      contenido.style.display = "block";
+    });
+  </script>
+
 </body>
 </html>
